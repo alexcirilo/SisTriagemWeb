@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/templates/sisModeloPrincipal.xhtml">
+    <ui:define name="menu">
+        <ui:include src="/includes/sisMenuPrincipal.xhtml"/>
+    </ui:define>
+    <ui:define name="conteudo" >
+        <h:form>
+            <p:panelGrid columns="2">
+                <f:facet name="header">
+                    <h1>Cadastro de Usuários</h1>
+                </facet>
+                <p:outputLabel value="Nome: " />
+                <p:inputText value="#{user.nomeUsuario}" required="true" maxlength="30" size="50"/>
+                
+                <p:outputLabel value="Login: "/>
+                <p:inputText value="#{user.login}" required="true" maxlength="20" size="20"/>
+                
+                <p:outputLabel value="Senha: "/>
+                <p:password value="#{user.senha}" required="true" maxlength="15" size="20"/>
+            </p:panelGrid>
+            <p:panelGrid columns="2">
+                <f:facet name="footer">
+                    <p:commandButton value="Salvar"  />
+                </f:facet>
+            </p:panelGrid>
+        </h:form>
+    </ui:define>
+</ui:composition>
